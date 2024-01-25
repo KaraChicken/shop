@@ -102,6 +102,21 @@ const routes = [
           login: true,
           admin: true
         }
+      },
+      {
+        path: '/404',
+        name: 'NotFound',
+        component: () => import('@/views/NotFoundView.vue'),
+        meta: {
+          title: '購物網 | 找不到',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        path: '/:pathMatch(.*)*',
+        name: 'All',
+        redirect: '/404'
       }
     ]
   }
